@@ -30,3 +30,4 @@ class Home(unittest.TestCase):
         self.homepage.click_submit()
         alert_text = self.homepage.return_alert_text()
         assert "Success!" in alert_text
+

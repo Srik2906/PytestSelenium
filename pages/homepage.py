@@ -71,3 +71,4 @@ class HomePage:
     def return_alert_text(self):
         alert_text = self.driver.find_element(By.XPATH,HomePage.alert_text_xpath).text
         return alert_text
+

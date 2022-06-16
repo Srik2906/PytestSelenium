@@ -36,3 +36,4 @@ class Shop(unittest.TestCase):
         self.checkoutpage.click_purchase_button()
         successText = self.checkoutpage.get_success_text()
         assert "Success! Thank you!" in successText
+

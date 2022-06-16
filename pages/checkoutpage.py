@@ -71,3 +71,4 @@ class CheckoutPage(BaseClass):
     def get_success_text(self):
         successText = self.driver.find_element(By.CLASS_NAME, "alert-success").text
         return successText
+

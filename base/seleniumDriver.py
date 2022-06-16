@@ -15,3 +15,4 @@ class BaseClass:
             wait.until(EC.presence_of_element_located((By.LINK_TEXT, element)))
         elif locator == "xpath":
             wait.until(EC.presence_of_element_located((By.XPATH, element)))
+
