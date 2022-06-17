@@ -1,0 +1,19 @@
+Index: pages/homepage.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from selenium.webdriver.common.by import By\nfrom selenium.webdriver.support.select import Select\n\n\nclass HomePage:\n    ##Locators of home page\n    email_xpath = \"//form//input[@name='email']\"\n    name_xpath = \"//form//input[@name='name']\"\n    password_xpath = \"//input[@id='exampleInputPassword1']\"\n    dropdown_xpath = (By.XPATH,\"//select\")\n    shop_button_xpath = \"//a[contains(.,'Shop')]\"\n    checkbox_css = \"input[id=exampleCheck1]\"\n    radio_css = \"input[id='inlineRadio1']\"\n    bday_css = \"input[name='bday']\"\n    submit_buton_css = \".btn.btn-success\"\n    name_field1_js = \"return document.getElementsByName('name')[0].value\"\n    name_field2_js = \"return document.getElementsByName('name')[1].value\"\n    alert_text_xpath = \"//div[ @class ='alert alert-success alert-dismissible']//strong\"\n\n    #contructor of HomePage class\n    def __init__(self,driver):\n        self.driver=driver\n\n    #sends email in the email fields\n    def enter_email(self,email):\n        return self.driver.find_element(By.XPATH,HomePage.email_xpath).send_keys(email)\n\n    #sends name in the name field\n    def enter_name(self,name):\n        return self.driver.find_element(By.XPATH,HomePage.name_xpath).send_keys(name)\n\n    #get name text\n    def get_name_text(self):\n        return self.driver.execute_script(HomePage.name_field1_js)\n\n    #clicks on check box\n    def click_checkbox(self):\n        return self.driver.find_element(By.CSS_SELECTOR,HomePage.checkbox_css).click()\n\n    #clicks on radio button\n    def click_radio(self):\n        return self.driver.find_element(By.CSS_SELECTOR,HomePage.radio_css).click()\n\n    #enters bday\n    def enter_bday(self,bday):\n        return self.driver.find_element(By.CSS_SELECTOR,HomePage.bday_css).send_keys(bday)\n\n    #select gender\n    def select_gender(self):\n        dropdown = Select(self.driver.find_element(*HomePage.dropdown_xpath))\n        return dropdown.select_by_visible_text(\"Female\")\n\n    #clicks on submit button\n    def click_submit(self):\n        return self.driver.find_element(By.CSS_SELECTOR,HomePage.submit_buton_css).click()\n\n    #Clicks on shop button\n    def click_shop(self):\n        self.driver.find_element(By.XPATH,HomePage.shop_button_xpath).click()\n\n    ####################################################################################\n            ###Functions used for assertions######\n    ####################################################################################\n\n    #return name\n    def return_name(self):\n        name = self.driver.execute_script(HomePage.name_field2_js)\n        return name\n\n    #returns alert message\n    def return_alert_text(self):\n        alert_text = self.driver.find_element(By.XPATH,HomePage.alert_text_xpath).text\n        return alert_text\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/homepage.py b/pages/homepage.py
+--- a/pages/homepage.py	(revision dde067fec1c490b4851b51f53832b4e469c5636a)
++++ b/pages/homepage.py	(date 1655370038329)
+@@ -48,7 +48,7 @@
+     #select gender
+     def select_gender(self):
+         dropdown = Select(self.driver.find_element(*HomePage.dropdown_xpath))
+-        return dropdown.select_by_visible_text("Female")
++        return dropdown.select_by_visible_text("Male")
+ 
+     #clicks on submit button
+     def click_submit(self):
