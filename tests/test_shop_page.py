@@ -11,7 +11,7 @@ productlist = json_data()['test_shop_page']['products']
 class Shop(unittest.TestCase):
 
     @pytest.fixture(autouse=True)
-    def classSetup(self):
+    def classSetup(self,setup):
         self.homepage = HomePage(self.driver)
         self.checkoutpage = CheckoutPage(self.driver)
 

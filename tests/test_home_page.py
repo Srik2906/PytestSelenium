@@ -12,7 +12,7 @@ dob = json_data()['test_home_page']['dob']
 class Home(unittest.TestCase):
 
     @pytest.fixture(autouse=True)
-    def classSetup(self):
+    def classSetup(self,setup):
         self.homepage = HomePage(self.driver)
 
     def test_home_page_name(self):
