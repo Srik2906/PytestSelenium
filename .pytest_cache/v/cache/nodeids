@@ -1,9 +1,0 @@
-[
-  "tests/test_demo.py::First::test_first",
-  "tests/test_demo.py::First::test_second",
-  "tests/test_demo.py::TestFirst::test_e2e",
-  "tests/test_demo.py::TestFirst::test_first",
-  "tests/test_demo.py::TestFirst::test_second",
-  "tests/test_modules/test_demo.py::test_first",
-  "tests/test_modules/test_demo.py::test_second"
-]
